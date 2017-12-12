@@ -2,13 +2,13 @@
 #!C:/xampp/php
 
 //ライブラリの読み込み
-require_once('C:/xampp/htdocs/php/twitter/twitteroauth/twitteroauth-master/autoload.php');
+require_once(dirname ( __FILE__ ) . '/../../twitter/twitteroauth/twitteroauth-master/autoload.php');
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 //APIを利用するための情報を入れる
 
 //ファイル参照で取得する
-$turl = 'C:\xampp\htdocs\php\config\Twitter_API_Key.json';
+$turl = (dirname ( __FILE__ ) . '/../../config/Twitter_API_Key.json');
 $tjson = file_get_contents($turl);
 $tjson = mb_convert_encoding($tjson, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 $TwitterAPIKey = json_decode($tjson,true);
